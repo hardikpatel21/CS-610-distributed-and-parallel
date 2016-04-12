@@ -1,0 +1,22 @@
+package multclient;
+
+import java.net.*; 
+public class MyClient{
+	public static void main(String[] args){
+	    try{      
+		InetAddress group = InetAddress.getByName("127.0.0.1");
+		MulticastSocket s = new MulticastSocket(3456);
+		System.out.println("Joined group at 127.0.0.1 port 3456");
+		s.joinGroup(group);
+		byte[] buf = new byte[100];
+		DatagramPacket recv = new DatagramPacket(buf, buf.length);
+		s.receive(recv);
+		System.out.println(new String(buf));
+		s.close();
+	    }
+	    catch (Exception ex){
+		ex.printStackTrace( ); 
+	    }
+	  }
+}
+

@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class yesno {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+String choice;
+int yescount = 0;
+int nocount = 0;
+Scanner sc = new Scanner(System.in);
+System.out.println("what is your vote?[yes|no]");
+choice = sc.next();
+if(choice.equals("yes")){
+	yescount++;
+	System.out.println("yes:"+ yescount + nocount);
+	}
+else if(choice.equals("no")){
+	nocount++;
+	System.out.println("No:"+ yescount + nocount);
+}
+else {
+	System.out.println("invalid choice");
+}
+
+	}
+
+}

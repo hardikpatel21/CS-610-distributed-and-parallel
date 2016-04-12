@@ -1,0 +1,8 @@
+import java.rmi.*;
+import java.util.*;
+
+public class MyClient{
+  public static void main(String args[]){
+    //Complete this method.
+  }
+}

@@ -1,0 +1,26 @@
+
+package MultiServ;
+
+import java.net.*;
+import java.util.Scanner; 
+
+public class MyClient{
+	public static void main(String[] args){
+	    try{      
+	InetAddress  group = InetAddress.getByName("230.1.1.1");
+	MulticastSocket  s = new MulticastSocket(2345);
+	s.setTimeToLive(32);
+	String msg;
+	Scanner sc= new Scanner(System.in);
+	System.out.println("Enter the integer");
+	msg=sc.nextLine();
+	DatagramPacket packet = new DatagramPacket(msg.getBytes(), msg.length(), group, 2345);
+	s.send(packet);
+	s.close();
+	    }
+	    catch (Exception ex){
+	ex.printStackTrace( );
+	    }
+	  }
+  
+}

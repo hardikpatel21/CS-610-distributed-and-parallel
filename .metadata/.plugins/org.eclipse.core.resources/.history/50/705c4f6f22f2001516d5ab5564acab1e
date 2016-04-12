@@ -1,0 +1,26 @@
+import java.io.*;
+import java.net.*;
+
+public class MyClient {
+	public static void main(String[] args) throws IOException {
+		final int MAX_LEN = 100;
+		byte[] buffer = new byte[MAX_LEN];
+		int port = 16790;
+		DatagramPacket datagram = new DatagramPacket(buffer, buffer.length);
+		DatagramSocket clientSocket = new DatagramSocket(port);
+
+		try {
+			clientSocket.setSoTimeout(5*1000);
+			clientSocket.receive(datagram);
+			String message = new String(buffer);
+			System.out.println(message);
+		} catch (IOException e) {
+			System.out.println("timeout on reciever");
+			System.out.println("Error: " + e);
+			System.exit(0);
+		} finally {
+			clientSocket.close();
+		}
+		System.out.println("The program terminated with no error and no exception");
+	}
+}

@@ -1,0 +1,26 @@
+import java.applet.Applet;
+import java.awt.*;
+import java.io.*;
+import java.net.*;
+
+public class MyClient extends Applet {
+  private int s;
+	
+  public void init(){
+    //Complete this method.
+    setSize(400, 400);
+    try{
+
+      //You may need repaint();
+      repaint();
+    }catch(Exception e){
+      System.out.println("Error: " + e);
+      System.exit(0);
+    }
+  }
+
+  public void paint(Graphics page){
+    //Complete this method.
+
+  }
+}
